@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
+from .serialziers import UploadImagesSerializer
+from .models import UploadImages
 
-# Create your views here.
+class UploadImageViewSet(ModelViewSet):
+    http_method_names = ['post']
+    serializer_class = UploadImagesSerializer
